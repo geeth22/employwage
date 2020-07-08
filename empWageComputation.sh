@@ -21,10 +21,18 @@ esac
 echo $WorkHours
 }
 
+function GetEmpWage() 
+{
+LocalWorkHour=$1
+echo $(($WorkHour*$wagePerHour))
+}
+
 while [[ $TotalWorkHours -lt $TotalWorkingHoursPerMonth && $TotalWorkingDays -lt $WorkingDaysPerMonth ]]
 do
 	((TotalWorkingDays++)
 	WorkHours="$(GetWorkHours $(( RANDOM % 3 )) )"
 	TotalWorkHours=$(($TotalWorkHours+$WorkHours))
+	DailyWages[$TotalWorkingDays]="$( GetEmpWage $WorkHours )"
 done
-	TotalDailyWage=$(($TotalWorkHours*$WagePerHour))
+TotalDailyWage=$(($TotalWorkHours*$WagePerHour))
+echo ${DailyWages[@]}
