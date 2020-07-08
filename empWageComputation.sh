@@ -11,17 +11,20 @@ TotalWorkingHoursPerMonth=100
 TotalWorkingDays=0
 TotalWorkHours=0
 
+function GetWorkHours()
+{
+case $1 in
+	1)WorkHours=4 ;;
+	2)WorkHours=8 ;;
+	*)WorkHours=0 ;;
+esac
+echo $WorkHours
+}
+
 while [[ $TotalWorkHours -lt $TotalWorkingHoursPerMonth && $TotalWorkingDays -lt $WorkingDaysPerMonth ]]
 do
 	((TotalWorkingDays++)
-	res=$(( RANDOM % 3 ))  # generating random number 0,1,2
-	case $res in
-		1)WorkHours=4 ;;
-		2)WorkHours=8 ;;
-		*)WorkHours=0 ;;
-	esac
-	echo $WorkHours
+	WorkHours="$(GetWorkHours $(( RANDOM % 3 )) )"
 	TotalWorkHours=$(($TotalWorkHours+$WorkHours))
 done
-
-TotalMonthWage=$(($TotalWorkHours*$WagePerHour))
+	TotalDailyWage=$(($TotalWorkHours*$WagePerHour))
