@@ -11,6 +11,8 @@ TotalWorkingHoursPerMonth=100
 TotalWorkingDays=0
 TotalWorkHours=0
 
+declare -A DailyWages
+
 function GetWorkHours()
 {
 case $1 in
@@ -32,7 +34,8 @@ do
 	((TotalWorkingDays++)
 	WorkHours="$(GetWorkHours $(( RANDOM % 3 )) )"
 	TotalWorkHours=$(($TotalWorkHours+$WorkHours))
-	DailyWages[$TotalWorkingDays]="$( GetEmpWage $WorkHours )"
+	DailyWages["$TotalWorkingDays"]="$( GetEmpWage $WorkHours )"
 done
 TotalDailyWage=$(($TotalWorkHours*$WagePerHour))
 echo ${DailyWages[@]}
+echo ${!DailyWages[@]}
