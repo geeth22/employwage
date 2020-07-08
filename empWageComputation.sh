@@ -4,6 +4,7 @@
 WagePerHour=20
 FullDayHour=8
 PartTimeHour=4
+WorkingDaysPerMonth=20
 
 res=$(( RANDOM % 3 ))  # generating random number 0,1,2
 
@@ -14,3 +15,4 @@ case $res in
 esac
 
 DailyWage=$(($WagePerHour*$WorkHour))
+TotalMonthWage=$(($WorkingDaysPerMonth*$DailyWage))
