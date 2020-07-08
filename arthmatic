@@ -1,0 +1,51 @@
+#airthmetic computation and sort.
+#!/bin/bash -x
+echo "enter the 3 number:";
+read a b c;
+echo "three numbers:-$a $b $c";
+u0=$((a+b*c));
+echo "uc0:-$u0"
+u1=$((a*b+c));
+echo "uc1:-$u1"
+u2=$((c+$((a/b))));
+echo "uc2:-$u2"
+u3=$((((a%b))+c))
+echo "uc3:-$u3"
+declare -A  add
+add[uc0]=$u0;
+#echo "${add[*]}"
+add[uc1]=$u1;
+add[uc2]=$u2;
+add[uc3]=$u3;
+for i in {0..3}
+do
+arr[$i]=${add[uc$i]}
+done
+echo "array:-${arr[@]}"
+length=${#arr[@]};
+for((i=0;i<length;i++))
+do
+for((j=$i;j>0;j--))
+do
+if [ ${arr[j]} -gt ${arr[`echo $j-1`]} ]
+then
+temp=${arr[j]};
+arr[j]=${arr[`echo $j-1`]};
+arr[`echo $j-1`]=$temp;
+fi
+done
+done
+echo "sorted arraydecending order :${arr[@]}"
+for((i=0;i<length;i++))
+do
+for((j=$i;j>0;j--))
+do
+if [ ${arr[j]} -lt ${arr[`echo $j-1`]} ]
+then
+temp=${arr[j]};
+arr[j]=${arr[`echo $j-1`]}
+arr[`echo $j-1`]=$temp;
+fi
+done
+done
+echo "sorted array ascending order:${arr[@]}"
