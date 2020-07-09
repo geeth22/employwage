@@ -1,6 +1,6 @@
-#!/bin/bash -x
+#usecase3
 
-res=$(( RANDOM % 3 ))  # generating random number 0,1,2
+#!/bin/bash -x
 
 #CONSTANTS
 WagePerHour=20
