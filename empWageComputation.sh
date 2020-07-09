@@ -1,6 +1,9 @@
-Welcome to Employee Wage Computation Program
+echo "Welcome to Employee Wage Computation Program"
 
 #usecase 1
+
+#!/bin/bash -x
+
 result=$(( RANDOM % 2 ))  # generating random number 0 or 1
 
 if [[ $result -eq 0 ]] ; then 
@@ -10,6 +13,8 @@ else
 fi
 
 #usecase 2
+
+#!/bin/bash -x 
 
 #CONSTANTS
 WagePerHour=20
@@ -26,6 +31,8 @@ else
 fi
 
 #usecase3
+
+#!/bin/bash -x
 
 #CONSTANTS
 WagePerHour=20
@@ -47,6 +54,8 @@ fi
 
 #usecase4
 
+#!/bin/bash -x
+
 #CONSTANTS
 WagePerHour=20
 FullDayHour=8
@@ -63,6 +72,8 @@ esac
 DailyWage=$(($WagePerHour*$WorkHour))
 
 #usecase5
+
+#!/bin/bash -x
 
 #CONSTANTS
 WagePerHour=20
@@ -82,6 +93,8 @@ DailyWage=$(($WagePerHour*$WorkHour))
 TotalMonthWage=$(($WorkingDaysPerMonth*$DailyWage))
 
 #usecase6
+
+#!/bin/bash -x
 
 #CONSTANTS
 WagePerHour=20
@@ -110,6 +123,8 @@ done
 TotalMonthWage=$(($TotalWorkHours*$WagePerHour))
 
 #usecase7
+
+#!/bin/bash -x
 
 #CONSTANTS
 WagePerHour=20
@@ -141,6 +156,8 @@ done
 	TotalDailyWage=$(($TotalWorkHours*$WagePerHour))
 
 #usecase8
+
+#!/bin/bash -x
 
 #CONSTANTS
 WagePerHour=20
@@ -180,6 +197,8 @@ TotalDailyWage=$(($TotalWorkHours*$WagePerHour))
 echo ${DailyWages[@]}
 
 #usecase9
+
+#!/bin/bash -x
 
 #CONSTANTS
 WagePerHour=20
