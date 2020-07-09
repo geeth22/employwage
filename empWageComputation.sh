@@ -1,4 +1,3 @@
-Welcome to Employee Wage Computation Program
 
 result=$(( RANDOM % 2 ))  # generating random number 0 or 1
 
