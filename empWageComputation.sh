@@ -1,5 +1,7 @@
 #!/bin/bash -x
 
+#!/bin/bash -x
+
 #CONSTANTS
 WagePerHour=20
 FullDayHour=8
